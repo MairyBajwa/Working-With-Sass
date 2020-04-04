@@ -1,4 +1,10 @@
 /* BASE ------------------------------------------------- */
+$color-main: #760090;
+$color-accent: #EEEA72;
+
+
+$font-main: 'Raleway', sans-serif;
+$font-headers: 'Bree Serif', serif;
 
 * {
   box-sizing: border-box;
@@ -8,14 +14,14 @@ body {
   color: #343434;
   font-size: 1rem;
   line-height: 1.5;
-  font-family: 'Raleway', sans-serif;
+  font-family: $font-main;
   text-align: center;
   margin: 0;
 }
 
 h1,
 h2 {
-  font-family: 'Bree Serif', serif;
+  font-family: $font-headers;
 }
 
 ul {
@@ -28,7 +34,7 @@ ul {
 
 header {
   height: 460px;
-  background: linear-gradient(#009fe1, #3acec2), 
+  background: linear-gradient(#009fe1, #3acec2),
               url('../img/bg.jpg') no-repeat;
   background-blend-mode: multiply;
   background-size: cover;
@@ -42,6 +48,7 @@ header h1 {
 }
 
 header p {
+  color: $color-accent;
   font-size: 1.25em;
   margin: 0;
 }
@@ -61,7 +68,7 @@ footer {
 
 .intro {
   margin: auto;
-  padding: 1em 1em 3em; 
+  padding: 1em 1em 3em;
 }
 
 /* COMPONENTS ----------------------------------------------- */
@@ -79,7 +86,7 @@ footer {
 }
 
 .card h1 {
-  color: #278da4; 
+  color: $color-main;
   margin: 0.35em 0 0;
   line-height: 1.25;
 }
@@ -93,7 +100,7 @@ footer {
   text-transform: uppercase;
   padding: 0.75em 1.5em;
   border-radius: 0.35em;
-  background-color: #278da4;  
+  background-color: $color-main;
   margin-top: auto;
 }
 
@@ -116,7 +123,7 @@ footer {
   .main-content {
     display: flex;
     flex-wrap: wrap;
-  }  
+  }
   .card {
     flex: 1;
   }
