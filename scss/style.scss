@@ -77,8 +77,29 @@ footer {
 
 /* COMPONENTS ----------------------------------------------- */
 
+.img-featured {
+  width: 165px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  margin-top: 75px;
+  position: relative;
+  z-index: 100;
+}
+
 .main-nav {
   margin-top: 1em;
+
+  li{
+    display: inline-block;
+    padding: 0 5px;
+    margin: 0 0.65em;
+  }
+  a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-white;
+    font-size: 0.8em;
+  }
 }
 
 .card {
@@ -87,13 +108,18 @@ footer {
   padding: 1.5em 1em;
   border: 1px solid $color-shade;
   border-radius: .25em;
+
+  h1 {
+    margin: 0.35em 0 0;
+    line-height: 1.25;
+  }
+  .icon,
+  h1 {
+    color: $color-main;
 }
 
-.card h1 {
-  color: $color-main;
-  margin: 0.35em 0 0;
-  line-height: 1.25;
 }
+
 
 .btn-info {
   color: $color-white;
