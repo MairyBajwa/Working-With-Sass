@@ -101,7 +101,7 @@ footer {
   height: 100px;
   background-color: $color-shade;
   margin-top: 3.5em;
-  
+
 @include skew{
   background-color: $color-shade;
   top: -25px;
@@ -166,7 +166,7 @@ footer {
   }
 }
 
-.btn{
+%btn{
   color: $white;
   display: inline-block;
   font-weight: bold;
@@ -174,11 +174,21 @@ footer {
   text-transform: uppercase;
   padding: 0.75em 1.5em;
   border-radius: 0.35em;
+    &:hover{
+      opacity: 0.8;
+    }
+    &:hover{
+      opacity: initial;
+    }
+}
+  .btn {
   &-callout{
+    @extend %btn;
     background-color: $color-secondary;
     font-size: 1.1em;
   }
   &-info{
+    @extend %btn;
     font-size: 0.8em;
     background-color: $color-primary;
     margin-top: auto;
