@@ -2,18 +2,37 @@
 
 $white: #fff;
 
-$color-primary: #278da4;
-$color-secondary: #b13c69;
+$color-primary: #8700A9;
+$color-secondary: #12BEE4;
 $color-accent: #eeea72;
-$color-shade: #eee;
+$color-shade: #e3e3e3;
 
 $color-text: #343434;
-$color-bg: #3acec2;
-$color-bg-light: #009fe1;
+$color-bg: #BD72EE;
+$color-bg-light: #72C8EE;
 
 $font-stack-primary: 'Raleway', sans-serif;
 $font-stack-secondary: 'Bree Serif', serif;
 
+$max-wdith: 1000px;
+
+// MIXIN ------------------------------------ /
+
+@mixin ceenter-content{
+    width: 90%;
+    max-width: $max-wdith;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin skew {
+content: '';
+display: block;
+width: 100%;
+height: 50px;
+position: absolute;
+transform: skewY(-2deg);
+}
 /* BASE ------------------------------------------- */
 
 * {
@@ -58,42 +77,37 @@ header {
     margin-bottom: 0;
     letter-spacing: 1px;
   }
+
   p {
     color: $color-accent;
     font-size: 1.25em;
     margin: 0;
   }
+
+  &:after {
+    @include skew;
+    background-color: $white;
+    bottom: -25px;
+  }
 }
 
-header::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 50px; 
-  position: absolute;
-  transform: skewY(-2deg);
-  background-color: $white;
-  bottom: -25px;
-} 
+
 
 footer {
   padding: 2em 0 0;
   height: 100px;
   background-color: $color-shade;
   margin-top: 3.5em;
-  position: relative; 
+  position: relative;
+
+  &:before {
+    @include skew;
+    background-color: $color-shade;
+    top: -25px;
+  }
 }
 
-footer::before {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 50px; 
-  position: absolute;
-  transform: skewY(-2deg);
-  background-color: $color-shade;
-  top: -25px;
-} 
+
 
 /* CONTAINERS ------------------------------------- */
 
@@ -103,7 +117,7 @@ footer::before {
 
 .intro {
   margin: auto;
-  padding: 1em 1em 3em; 
+  padding: 1em 1em 3em;
 }
 
 /* COMPONENTS ------------------------------------- */
@@ -120,12 +134,15 @@ footer::before {
     text-decoration: none;
     text-transform: uppercase;
     padding: 0.5em;
+    &:visited{
+      color: $white;
+    }
   }
 }
 
 .img-featured {
   width: 165px;
-  border: 4px solid $white; 
+  border: 4px solid $white;
   border-radius: 50%;
   margin-top: 75px;
   position: relative;
@@ -141,24 +158,38 @@ footer::before {
   h1 {
     margin: 0.35em 0 0;
     line-height: 1.25;
-  }  
+  }
   .icon,
   h1 {
     color: $color-primary;
   }
 }
 
-.btn-info {
+.btn{
   color: $white;
   display: inline-block;
-  font-size: 0.85em;
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
   padding: 0.75em 1.5em;
   border-radius: 0.35em;
-  background-color: $color-primary;  
-  margin-top: auto;
+  &-callout{
+    background-color: $color-secondary;
+    font-size: 1.1em;
+  }
+  &-info{
+    font-size: 0.8em;
+    background-color: $color-primary;
+    margin-top: auto;
+  }
+}
+a{
+  text-decoration: none;
+  color: $color-primary;
+
+  &:hover{
+    color: $color-text;
+  }
 }
 
 
@@ -180,7 +211,7 @@ footer::before {
   .main-content {
     display: flex;
     flex-wrap: wrap;
-  }  
+  }
   .card {
     flex: 1;
   }
@@ -188,9 +219,7 @@ footer::before {
 
 @media (min-width: 768px) {
   .main-content {
-    width: 90%;
-    max-width: 1000px;
-    margin: 0 auto;
+    @include ceenter-content;
   }
 }
 
@@ -198,6 +227,7 @@ footer::before {
   header {
     background-position: 0 0, 0 45%;
   }
+
   .intro {
     width: 45%;
   }
