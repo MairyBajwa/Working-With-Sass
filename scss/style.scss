@@ -1,7 +1,12 @@
 /* BASE ------------------------------------------------- */
 $color-main: #760090;
 $color-accent: #EEEA72;
+$color-shade: #e3e3e3;
 
+$color-text: #343434;
+$color-white: #fff;
+$color-header-gr: #9672EE;
+$color-header-grlight: #72D4EE;
 
 $font-main: 'Raleway', sans-serif;
 $font-headers: 'Bree Serif', serif;
@@ -11,7 +16,7 @@ $font-headers: 'Bree Serif', serif;
 }
 
 body {
-  color: #343434;
+  color: $color-text;
   font-size: 1rem;
   line-height: 1.5;
   font-family: $font-main;
@@ -34,14 +39,13 @@ ul {
 
 header {
   height: 460px;
-  background: linear-gradient(#009fe1, #3acec2),
-              url('../img/bg.jpg') no-repeat;
+  background: linear-gradient($color-header-gr, $color-header-grlight), url('../img/bg.jpg') no-repeat;
   background-blend-mode: multiply;
   background-size: cover;
 }
 
 header h1 {
-  color: #fff;
+  color: $color-white;
   font-size: 4.8em;
   margin-bottom: 0;
   letter-spacing: 1px;
@@ -56,7 +60,7 @@ header p {
 footer {
   padding: 2em 0 0;
   height: 100px;
-  background-color: #eee;
+  background-color: $color-shade;
   margin-top: 3.5em;
 }
 
@@ -81,7 +85,7 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 1.5em 1em;
-  border: 1px solid #eee;
+  border: 1px solid $color-shade;
   border-radius: .25em;
 }
 
@@ -92,7 +96,7 @@ footer {
 }
 
 .btn-info {
-  color: #fff;
+  color: $color-white;
   display: inline-block;
   font-size: 0.85em;
   font-weight: bold;
